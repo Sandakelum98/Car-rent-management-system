@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2020-10-06T22:02:55 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bill" pageWidth="288" pageHeight="374" columnWidth="248" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a0bfb3f5-55aa-4fdd-911b-5792d60ec9f2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ssd"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
+	<parameter name="RESERVATION_ID" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+customer.cust_name,
+customer.mobile_no,
+reservation.res_id,
+`user`.user_name,
+reservation_detail.from_date,
+reservation_detail.to_date,
+reservation_detail.default_rate,
+reservation_detail.km,
+reservation_detail.adding_rate,
+vehicle_model.model_name,
+vehicle.vehicle_no,
+payment.payment_type AS advance,
+payment.amount,
+payment_detail.payment_type as cash,
+if(payment_detail.card_number>0,payment_detail.card_number,'') as card_number
+FROM
+customer
+INNER JOIN reservation ON reservation.cust_id = customer.cust_id
+INNER JOIN reservation_detail ON reservation_detail.res_id = reservation.res_id
+INNER JOIN payment ON payment.res_id = reservation.res_id
+INNER JOIN payment_detail ON payment_detail.payment_id = payment.payment_id
+INNER JOIN `user` ON reservation.user_id = `user`.user_id
+INNER JOIN vehicle ON reservation_detail.vehicle_id = vehicle.vehicle_id
+INNER JOIN vehicle_model ON vehicle.model_id = vehicle_model.model_id
+WHERE
+reservation.res_id =  $P{RESERVATION_ID} 
+]]>
+	</queryString>
+	<field name="cust_name" class="java.lang.String"/>
+	<field name="mobile_no" class="java.lang.String"/>
+	<field name="res_id" class="java.lang.Integer"/>
+	<field name="user_name" class="java.lang.String"/>
+	<field name="from_date" class="java.sql.Date"/>
+	<field name="to_date" class="java.sql.Date"/>
+	<field name="default_rate" class="java.lang.Double"/>
+	<field name="km" class="java.lang.Integer"/>
+	<field name="adding_rate" class="java.lang.Double"/>
+	<field name="model_name" class="java.lang.String"/>
+	<field name="vehicle_no" class="java.lang.String"/>
+	<field name="advance" class="java.lang.String"/>
+	<field name="amount" class="java.lang.Double"/>
+	<field name="cash" class="java.lang.String"/>
+	<field name="card_number" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="145" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="-20" y="0" width="288" height="30" uuid="d7db1cab-7e68-4134-b9ca-f9befe6eb165"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[CH Rent Car]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-20" y="30" width="288" height="20" uuid="441e678f-a63b-495e-8c67-8bc2cc390f1d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Kegalle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="72" width="80" height="17" uuid="53a58229-3f8a-4377-8df3-70c39c0ca99f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Customer Name :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="89" width="170" height="17" uuid="ad67e37a-048b-4868-b8a4-3eff1d5f243c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mobile_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="89" width="80" height="17" uuid="e84c981f-bc80-4ce9-9562-94f7f50c0d60">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Mobile No :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="72" width="170" height="17" uuid="1d1f4b82-8790-4cb7-a15a-90e771eab0ff"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cust_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="106" width="80" height="17" uuid="b417eb34-a3c5-488c-8f7c-384d948e6479">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[From Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="123" width="80" height="17" uuid="bbf78de4-7ce9-4e0a-b2bc-ee6a25bba61f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[To Date :]]></text>
+			</staticText>
+			<textField pattern="yyyy MMMM dd">
+				<reportElement x="80" y="123" width="170" height="17" uuid="cdce4046-4fb9-43f5-8d21-2b303ca90be8"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{to_date}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy MMMM dd">
+				<reportElement x="80" y="106" width="170" height="17" uuid="444ee74a-8adc-4c19-95d6-05a67b496246"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{from_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="55" width="170" height="17" uuid="89ce01dc-7eec-4d91-ba69-cd670f244c0d"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["INV0000"+$F{res_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="55" width="80" height="17" uuid="49be3736-5ed0-446e-8f5e-8dc2ed0b4b9a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Invoice No :]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="-6" y="0" width="60" height="17" uuid="2d1d24d0-af7e-416e-9eaa-297eab221467">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vehicle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="0" width="60" height="17" uuid="93520708-c841-47f3-a108-a90e2f62ef93"/>
+				<box leftPadding="3">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Model]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="0" width="60" height="17" uuid="332127da-bcdf-4e9f-a433-5b1b670a69c3"/>
+				<box rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Default Rs.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="174" y="0" width="40" height="17" uuid="40cc97a4-3ea1-4988-b147-f611c1d2a237"/>
+				<box rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[KM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="0" width="40" height="17" uuid="d19f8fd9-4cdb-4854-8ecb-361ab5f2e094"/>
+				<box rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[EX Rs.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="-6" y="0" width="60" height="17" uuid="f34702ee-b580-42bc-8252-999e75afd6f5">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vehicle_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="0" width="60" height="17" uuid="d6a96d08-96a1-4cfa-af82-c19a2580db10"/>
+				<box leftPadding="3">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{model_name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="114" y="0" width="60" height="17" uuid="701d5d05-67b2-476a-8c09-569e3b0ef590"/>
+				<box rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{default_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="0" width="40" height="17" uuid="13e8167c-b5cf-42d9-94bf-88819b2ef13a"/>
+				<box rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{km}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="214" y="0" width="40" height="17" uuid="ac002750-d045-4e3f-9069-f7dc95c8434d"/>
+				<box rightPadding="5">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{adding_rate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="132" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="100" y="10" width="100" height="17" uuid="2f2a53f1-4b1b-4137-be1e-67290a1e54cf">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{advance}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="200" y="10" width="54" height="17" uuid="158b1595-45bf-4fcf-ba89-3ad73a6aa152"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="27" width="54" height="17" uuid="6d9f15fd-2447-4c8a-a178-aaf36613576f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{card_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="27" width="100" height="17" uuid="909122e4-ff80-4563-b610-cc26f165d2f5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cash}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-18" y="100" width="285" height="17" uuid="2ef48088-be28-4d92-8b1e-bf89c83a6258"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Thank You !]]></text>
+			</staticText>
+			<textField pattern="yyyy-MM-dd h:mm:ss a">
+				<reportElement x="70" y="78" width="113" height="17" uuid="79140f7c-4928-49d1-a239-e4dc6fcf61f7">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="60" width="69" height="17" uuid="631c61fa-6b20-4389-9480-5cb5e919a469"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{user_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="87" y="60" width="34" height="17" uuid="dc1d07b2-d5d3-4864-b487-a53e70bbd8c5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[User :]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

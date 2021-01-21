@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="349.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <AnchorPane prefHeight="350.0" prefWidth="508.0">
+         <children>
+            <ImageView fx:id="imgView" fitHeight="380.0" fitWidth="508.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts/a456723ed43e77560628bd8ace73076f-700.jpg" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="txtUsername" focusColor="BLACK" labelFloat="true" layoutX="35.0" layoutY="135.0" onAction="#setFocus" prefHeight="25.0" prefWidth="198.0" promptText="User name" text="kamal" unFocusColor="BLACK">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="36.0" layoutY="30.0" prefHeight="58.0" prefWidth="246.0" text="CH Rent Car">
+               <font>
+                  <Font name="Ebrima" size="36.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtPassword" focusColor="BLACK" labelFloat="true" layoutX="35.0" layoutY="181.0" onAction="#loginEnter" prefHeight="25.0" prefWidth="198.0" promptText="Password" text="1111" unFocusColor="BLACK">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btnLogin" layoutX="32.0" layoutY="260.0" onAction="#LoginOnAction" prefHeight="27.0" prefWidth="205.0" style="-fx-background-color: #1e272e; -fx-border-color: #130f40;" text="Login" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="472.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddVehicleFormController">
+   <children>
+      <AnchorPane fx:id="addVehicle" prefHeight="472.0" prefWidth="536.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Home   &gt;   Vehicles   &gt;   Add Vehicle" />
+            <Label layoutX="14.0" layoutY="31.0" text="Add New Vehicle" textFill="#2d98da">
+               <font>
+                  <Font name="Ebrima" size="24.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtVehicleNo" focusColor="#2d98da" labelFloat="true" layoutX="196.0" layoutY="179.0" prefHeight="25.0" prefWidth="208.0" />
+            <JFXButton fx:id="btnSave" layoutX="140.0" layoutY="413.0" onAction="#saveButtonAction" onMouseEntered="#saveBtnEnter" onMouseExited="#saveBtnExit" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #2d98da;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnCancel" layoutX="286.0" layoutY="413.0" onAction="#cancelButtonAction" onMouseEntered="#cancelBtnEnter" onMouseExited="#cancelBtnExit" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #2d98da;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnChooseImage" layoutX="423.0" layoutY="303.0" onAction="#imageBtnClickAction" onMouseEntered="#imageBtnEnter" onMouseExited="#imageBtnExit" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #2d98da;" text="Choose" textFill="WHITE" />
+            <JFXComboBox fx:id="cmbVehicleMake" focusColor="#2d98da" layoutX="198.0" layoutY="97.0" onAction="#makeComboAction" prefHeight="25.0" prefWidth="208.0" />
+            <Label layoutX="56.0" layoutY="99.0" text="Make   :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbVehicleModel" focusColor="#2d98da" layoutX="196.0" layoutY="138.0" prefHeight="25.0" prefWidth="208.0" />
+            <Label layoutX="56.0" layoutY="140.0" text="Model  :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="56.0" layoutY="181.0" text="Vehicle Number :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtVehicleYear" focusColor="#2d98da" labelFloat="true" layoutX="196.0" layoutY="220.0" prefHeight="25.0" prefWidth="208.0" />
+            <Label layoutX="56.0" layoutY="222.0" text="Year  :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtVehicleColour" focusColor="#2d98da" labelFloat="true" layoutX="196.0" layoutY="261.0" prefHeight="25.0" prefWidth="208.0" />
+            <Label layoutX="56.0" layoutY="263.0" text="Colour   :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtVehicleImage" focusColor="#2d98da" labelFloat="true" layoutX="196.0" layoutY="303.0" prefHeight="25.0" prefWidth="208.0" />
+            <Label layoutX="56.0" layoutY="305.0" text="Image   :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="346.0" text="Select Price Catogery   :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtVehiclePriceCategory" focusColor="#2d98da" labelFloat="true" layoutX="216.0" layoutY="344.0" prefHeight="25.0" prefWidth="188.0" />
+            <JFXButton fx:id="btnChoosePriceCategory" layoutX="423.0" layoutY="344.0" onAction="#categoryBtnClickAction" onMouseEntered="#categoryBtnEnter" onMouseExited="#categoryBtnExit" style="-fx-background-color: #2d98da;" text="Choose " textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

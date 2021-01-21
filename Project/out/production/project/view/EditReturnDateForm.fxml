@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="217.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditReturnDateFormController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Home   &gt;   Return  &gt;  Return Date" />
+      <Label layoutX="14.0" layoutY="31.0" text="Edit Return Date" textFill="#2d98da">
+         <font>
+            <Font name="Ebrima" size="24.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="pickerNewDate" layoutX="132.0" layoutY="160.0" prefHeight="25.0" prefWidth="190.0" />
+      <Label layoutX="11.0" layoutY="106.0" text="From Date  :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="106.0" text="To Date  :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnDone" layoutX="372.0" layoutY="160.0" onAction="#doneBtnClickAction" onMouseEntered="#doneBtnEnter" onMouseExited="#doneBtnExit" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #2d98da;" text="Done" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtFromDate" editable="false" layoutX="98.0" layoutY="103.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="txtToDate" editable="false" layoutX="372.0" layoutY="103.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label layoutX="11.0" layoutY="163.0" text="New Return Date  :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnCancel" layoutX="467.0" layoutY="160.0" onAction="#cancelBtnClickAction" onMouseEntered="#cancelBtnEnter" onMouseExited="#cancelBtnExit" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #2d98da;" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

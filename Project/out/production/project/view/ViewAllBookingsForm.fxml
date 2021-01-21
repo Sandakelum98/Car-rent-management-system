@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="566.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewAllBookingsFormController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Home   &gt;   Booking  &gt;  View All Bookings" />
+      <Label layoutX="14.0" layoutY="31.0" text="All Vehicle Bookings" textFill="#2d98da">
+         <font>
+            <Font name="Ebrima" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblAllBookings" layoutX="14.0" layoutY="110.0" prefHeight="441.0" prefWidth="768.0">
+        <columns>
+          <TableColumn fx:id="clmResId" prefWidth="49.0" text="Res Id" />
+          <TableColumn fx:id="clmCustName" prefWidth="126.0" text="Customer Name" />
+            <TableColumn fx:id="clmMobileNo" prefWidth="113.0" text="Mobile No" />
+            <TableColumn fx:id="clmFromDate" prefWidth="101.0" text="From Date" />
+            <TableColumn fx:id="clmToDate" prefWidth="98.0" text="To Date" />
+            <TableColumn fx:id="clmModel" prefWidth="99.0" text="Vehicle Model" />
+            <TableColumn fx:id="clmPayment" prefWidth="89.0" text="Payment" />
+            <TableColumn fx:id="clmBookingDate" prefWidth="91.0" text="Booking Date" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnUpdate" layoutX="724.0" layoutY="73.0" onAction="#updateBtnClickAction" onMouseEntered="#updateBtnEnter" onMouseExited="#updateBtnExit" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: #2d98da;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtSearch" focusColor="#2d98da" labelFloat="true" layoutX="596.0" layoutY="36.0" onKeyReleased="#searchTxtKeyReleaseAction" prefHeight="25.0" prefWidth="187.0" promptText="Search" />
+   </children>
+</AnchorPane>

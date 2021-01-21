@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="394.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoosePriceCategoryController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Home   &gt;   Vehicles   &gt;   Add Vehicle   &gt;   Select Price" />
+      <Label layoutX="14.0" layoutY="31.0" text="Select Price Category" textFill="#2d98da">
+         <font>
+            <Font name="Ebrima" size="24.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnAddNewCategory" layoutX="461.0" layoutY="54.0" onAction="#addCategoryBtnClickAction" onMouseEntered="#addCategoryBtnEnter" onMouseExited="#addCategoryBtnExit" prefHeight="25.0" prefWidth="32.0" style="-fx-background-color: #2d98da;" text="+" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDone" layoutX="407.0" layoutY="360.0" onAction="#doneBtnClickAction" onMouseEntered="#doneBtnEnter" onMouseExited="#doneBtnExit" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #2d98da;" text="done" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblPriceCategory" layoutX="15.0" layoutY="94.0" prefHeight="258.0" prefWidth="479.0">
+        <columns>
+          <TableColumn fx:id="clmId" prefWidth="23.0" />
+          <TableColumn fx:id="clmCateName" prefWidth="127.0" text="Category Name" />
+            <TableColumn fx:id="clmDefaultRate" prefWidth="117.0" text="Default Rate (Rs)" />
+            <TableColumn fx:id="clmKm" prefWidth="85.0" text="KM" />
+            <TableColumn fx:id="clmAddingRate" prefWidth="126.0" text="Adding Rate(Rs)" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

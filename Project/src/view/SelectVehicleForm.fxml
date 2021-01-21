@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="588.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SelectVehicleFormController">
+   <children>
+      <AnchorPane fx:id="vehicle" prefHeight="588.0" prefWidth="786.0">
+         <children>
+            <Label layoutX="11.0" layoutY="14.0" text="Home   &gt;   Vehicles" />
+            <Label layoutX="11.0" layoutY="31.0" text="Vehicles" textFill="#2d98da">
+               <font>
+                  <Font name="Ebrima" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnDone" layoutX="685.0" layoutY="549.0" onAction="#doneBtnClickAction" onMouseEntered="#doneBtnEnter" onMouseExited="#doneBtnExit" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #2d98da;" text="Done" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="tblAvailableVehicle" layoutX="10.0" layoutY="77.0" prefHeight="460.0" prefWidth="762.0">
+              <columns>
+                <TableColumn fx:id="clmId" prefWidth="22.0" />
+                <TableColumn fx:id="clmMake" prefWidth="98.0" text="Make" />
+                  <TableColumn fx:id="clmModel" prefWidth="98.0" text="Model" />
+                  <TableColumn fx:id="clmVehicleNo" prefWidth="104.0" text="Vehicle No" />
+                  <TableColumn fx:id="clmYear" prefWidth="90.0" text="Year" />
+                  <TableColumn fx:id="clmColour" prefWidth="87.0" text="Colour" />
+                  <TableColumn fx:id="clmDefaultRate" prefWidth="102.0" text="Default Rate" />
+                  <TableColumn fx:id="clmKm" prefWidth="73.0" text="Km" />
+                  <TableColumn fx:id="clmAddingRate" prefWidth="85.0" text="Adding Rate" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

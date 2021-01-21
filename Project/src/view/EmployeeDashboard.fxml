@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="578.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeDashboard">
+   <children>
+      <AnchorPane fx:id="dashboard" layoutX="1.0" layoutY="1.0" prefHeight="588.0" prefWidth="786.0">
+         <children>
+            <Label layoutX="11.0" layoutY="14.0" text="Home   &gt;   Dashboard" />
+            <Label layoutX="11.0" layoutY="31.0" text="DashBoard" textFill="#2d98da">
+               <font>
+                  <Font name="Ebrima" size="24.0" />
+               </font>
+            </Label>
+            <Pane layoutX="595.0" layoutY="74.0" prefHeight="54.0" prefWidth="177.0" style="-fx-background-color: #38ada9;">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="45.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asserts/icons8-car-badge-50%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="56.0" layoutY="4.0" text="Today Returns" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNotificationsCount" layoutX="91.0" layoutY="26.0" text="00" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="74.0" prefHeight="54.0" prefWidth="177.0" style="-fx-background-color: #f7b731;">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="45.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asserts/icons8-car-100.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="58.0" layoutY="3.0" text="Today Available" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTodayAvailableCount" layoutX="97.0" layoutY="26.0" text="07" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="205.0" layoutY="74.0" prefHeight="54.0" prefWidth="177.0" style="-fx-background-color: #4b6584;">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="72.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asserts/icons8-booking-100.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="61.0" layoutY="4.0" text="Today Bookings" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTodayAvailableCount1" layoutX="100.0" layoutY="27.0" text="01" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="14.0" layoutY="164.0" text="Next Week Bookings">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Pane layoutX="400.0" layoutY="74.0" prefHeight="54.0" prefWidth="177.0" style="-fx-background-color: #8854d0;">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="72.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asserts/icons8-user-group-60.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="61.0" layoutY="4.0" text="New Customers" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTodayAvailableCount11" layoutX="100.0" layoutY="27.0" text="02" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <BarChart fx:id="barChart" layoutX="20.0" layoutY="230.0" prefHeight="312.0" prefWidth="747.0">
+              <xAxis>
+                <CategoryAxis fx:id="horizontalBar" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="verticalBar" prefHeight="263.0" prefWidth="28.0" side="LEFT">
+                     <tickLabelFont>
+                        <Font name="System Bold" size="10.0" />
+                     </tickLabelFont>
+                  </NumberAxis>
+              </yAxis>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </BarChart>
+            <JFXTextField fx:id="txtNoOfDays" labelFloat="true" layoutX="594.0" layoutY="165.0" onKeyReleased="#changeNoOfDays" prefHeight="25.0" prefWidth="165.0" promptText="No of days" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

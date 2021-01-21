@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="588.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VehicleFormController">
+   <children>
+      <AnchorPane fx:id="vehicle" layoutX="1.0" prefHeight="588.0" prefWidth="786.0">
+         <children>
+            <Label layoutX="11.0" layoutY="14.0" text="Home   &gt;   Vehicles" />
+            <Label layoutX="11.0" layoutY="31.0" text="Vehicles" textFill="#2d98da">
+               <font>
+                  <Font name="Ebrima" size="24.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtSearchVehicle" focusColor="#2d98da" labelFloat="true" layoutX="536.0" layoutY="36.0" onKeyReleased="#searchTxtKeyReleaseAction" prefHeight="25.0" prefWidth="184.0" promptText="Search Vehicle" />
+            <JFXButton fx:id="btnAddVehicle" layoutX="741.0" layoutY="36.0" onAction="#addVehicleAction" onMouseEntered="#addButtonEnter" onMouseExited="#addButtonExit" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #2d98da;" text="+" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdate" layoutX="701.0" layoutY="74.0" onAction="#updateBtnClickAction" onMouseEntered="#updateBtnEnter" onMouseExited="#updateBtnExit" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #2d98da;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="tblAllVehicleDetails" layoutX="10.0" layoutY="116.0" prefHeight="457.0" prefWidth="762.0">
+              <columns>
+                <TableColumn fx:id="clmId" prefWidth="21.0" />
+                <TableColumn fx:id="clmMake" prefWidth="99.0" text="Make" />
+                  <TableColumn fx:id="clmModel" prefWidth="103.0" text="Model" />
+                  <TableColumn fx:id="clmVehicleNo" prefWidth="90.0" text="Vehicle No" />
+                  <TableColumn fx:id="clmYear" prefWidth="67.0" text="Year" />
+                  <TableColumn fx:id="clmColour" prefWidth="84.0" text="Colour" />
+                  <TableColumn fx:id="clmDefaultRate" prefWidth="94.0" text="Default Rate" />
+                  <TableColumn fx:id="clmKm" prefWidth="65.0" text="Km" />
+                  <TableColumn fx:id="clmAddingRate" prefWidth="78.0" text="Adding Rate" />
+                  <TableColumn fx:id="clmStatus" prefWidth="59.0" text="Status" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="btnViewImage" layoutX="618.0" layoutY="74.0" onAction="#imageBtnAction" onMouseEntered="#imageBtnEnter" onMouseExited="#imageBtnExit" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #2d98da;" text="Image" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
